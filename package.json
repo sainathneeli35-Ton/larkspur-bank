@@ -1,0 +1,18 @@
+{
+  "name": "larkspur-bank",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A full-stack demonstration banking app: double-entry ledger, payments, scheduled payments.",
+  "scripts": {
+    "setup": "npm --prefix server install && npm --prefix web install",
+    "seed": "npm --prefix server run seed",
+    "dev": "concurrently -n api,web -c blue,magenta \"npm --prefix server run dev\" \"npm --prefix web run dev\"",
+    "test": "npm --prefix server test",
+    "typecheck": "npm --prefix server run typecheck && npm --prefix web run typecheck",
+    "build": "npm --prefix web run build",
+    "start": "npm --prefix server start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
